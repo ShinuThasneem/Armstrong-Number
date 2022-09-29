@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armstrong Number</title>
+    <link href='https://fonts.googleapis.com/css?family=Coiny' rel='stylesheet'>
+
+</head>
+<style>
+#d1{
+    background-image:url(armstrong.jpg);
+    height: 780px;
+    width: 100%;
+    background-size: cover;
+}
+#h1{
+    font-family: 'Coiny';font-size: 60px;
+    color:beige;
+
+}
+#input{
+
+    color:rgb(73, 71, 71);
+    font-family: 'Coiny';font-size: 19px;
+    width:20%;
+    height:30px 
+
+}
+#btn{
+    background-color:beige;
+    border:solid 2px rgb(162, 157, 148);
+    height: 36px;
+    width: 10%;
+    font-family: 'Coiny';font-size: 17px;
+    color:rgb(73, 71, 71);
+}
+
+#result{
+    color:bisque;
+    font-family: 'Coiny';font-size: 17px;
+}
+</style>
+
+<body>
+    <div id="d1" align="center">
+<div class="row" style="height: 230px;">
+</div>
+<h1 id="h1">ARMSTRONG NUMBER</h1>
+<input type="text" placeholder="Enter a number" id="input">
+<button onclick="armstrong()" id="btn">CHECK</button>
+<p id="result"></p>
+
+
+    </div>
+
+<script>
+    var res=document.getElementById("result");
+    console.log(res)
+function armstrong(){
+    res.classList.add("result2");
+
+var a=parseInt(document.getElementById("input").value);
+let sum = 0;
+// const number = prompt('Enter a three-digit positive integer: ');
+
+// create a temporary variable
+let temp = a;
+while (temp > 0) {
+    // finding the one's digit
+    let remainder = temp % 10;
+
+    sum += remainder * remainder * remainder;
+
+    // removing last digit from the number
+    temp = parseInt(temp / 10); // convert float into integer
+
+}
+
+// check the condition
+if (sum == a) {
+
+    document.getElementById("result").innerHTML= `${a} is an Armstrong number..!`
+}
+else {
+
+    document.getElementById("result").innerHTML= `${a} is not an Armstrong number..!`
+}
+
+}
+</script>
+
+
+
+</body>
+</html>
